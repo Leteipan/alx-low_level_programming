@@ -1,25 +1,35 @@
 #include <stdio.h>
 #include "main.h"
-#include "6-abs.c"
 
 /**
- * print_last_digit - function declaration
- * @number: function arguement of type int
- * Description: extract last digit
+ * jack_bauer - function declaration
+ * Description: prints avery minute
  * Return: void
  */
 
-int print_last_digit(int number);
+void jack_bauer(void);
 
 /**
- * print_last_digit - extracts the last digit
- * @number: integer to extract last digit
- * Description: extract last digit of number
- * Return: last_digit
+ * jack_bauer - function definition
+ * Description: prints every single minute
+ * Return: void
  */
 
-int print_last_digit(int number)
+void jack_bauer(void)
 {
-	_putchar('0' + _abs(number % 10));
-	return (_abs(number % 10));
+	int hours;
+	int minutes;
+
+	for (hours = 0; hours <= 23; hours++)
+	{
+		for (minutes = 0; minutes <= 59; minutes++)
+		{
+			_putchar(hours / 10 + '0');
+			_putchar(hours % 10 + '0');
+			_putchar(':');
+			_putchar(minutes / 10 + '0');
+			_putchar(minutes % 10 + '0');
+			_putchar('\n');
+		}
+	}
 }
